@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#023246" name="theme-color"/><meta content="Smart Technical Services LLC delivers integrated fire safety, security, audio-visual and building management systems across Oman." name="description"/>
+<title>Contact Us | Smart Technical Services</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="styles.css?v=graphic-transition-v1" rel="stylesheet"/>
+</head>
+<body class="page-enter palette-red-editorial"><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div><div class="announcement"><span class="status-dot"></span> Integrated ELV solutions across Oman <span class="announcement-divider">/</span> <a href="admin-login.html">Admin <span aria-hidden="true">↗</span></a></div>
+<header class="site-header" id="top">
+<a aria-label="Smart Technical Services home" class="brand" href="index.html"><span class="brand-mark"><img src="assets/sts-logo.png" alt="STS logo"></span><span class="brand-copy"><strong>STS<span>.</span></strong><small>SMART TECHNICAL SERVICES</small></span></a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button>
+<nav aria-label="Main navigation" class="main-nav"><a href="index.html">Home</a><a href="solutions.html">Solutions</a><a href="about.html">About STS</a><a href="projects.html">Projects</a><a href="approach.html">Our approach</a><a href="careers.html">Careers</a><a class="nav-contact" href="contact.html">Contact Us <span>↗</span></a></nav><div class="header-account-actions"><a class="account-login account-login-icon-only" href="auth.html" aria-label="Log in" title="Log in"><img src="assets/customer-login-icon.png" alt="" aria-hidden="true"></a><button class="site-search-toggle" type="button" aria-label="Open site search" aria-expanded="false" title="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="m16 16 4.2 4.2"></path></svg></button></div>
+</header>
+<main><section class="contact-section" id="contact"><div class="contact-intro"><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> LET'S MAKE IT WORK</div><h2>Tell us what<br/><em>you need to solve.</em></h2><p>Planning a new project, upgrading an existing system or looking for ongoing support? Start with a conversation.</p><div class="contact-detail"><span class="contact-detail-icon">↗</span><div><small>CALL OUR TEAM</small><a href="tel:+96891919123">+968 9191 9123</a></div></div><div class="contact-detail"><span class="contact-detail-icon">✉</span><div><small>EMAIL</small><a href="mailto:support@stselv.com">support@stselv.com</a></div></div><div class="contact-detail"><span class="contact-detail-icon">⌖</span><div><small>VISIT US</small><p>Office-3, Building 1737, Near Oman LNG,<br/>Ghala, Muscat, Sultanate of Oman</p></div></div></div><form class="contact-form" id="enquiry-form"><div class="form-heading"><span>PROJECT ENQUIRY</span><small>Fields marked * are required</small></div><div class="form-grid"><label>Your name *<input autocomplete="name" name="name" placeholder="Full name" required=""/></label><label>Work email *<input autocomplete="email" name="email" placeholder="you@company.com" required="" type="email"/></label><label>Phone number *<input autocomplete="tel" name="phone" placeholder="+968 …" type="tel" required/></label><label>I'm interested in<select name="service" required=""><option disabled="" selected="" value="">Select a service</option><option>Fire detection &amp; fighting</option><option>Security &amp; access control</option><option>Audio-visual systems</option><option>Building management systems</option><option>Specialized solutions</option><option>Maintenance &amp; support</option><option>Careers</option><option>Other</option></select></label><label class="form-wide">Tell us a little about your project *<textarea name="message" placeholder="Location, project type, timeline or what you need help with..." required="" rows="4"></textarea></label></div><button class="button button-primary form-submit" type="submit">Prepare enquiry <span>↗</span></button><p class="form-note">Submitting opens your email app with your enquiry prepared. No information is sent from this demo until you send the email.</p><p aria-live="polite" class="form-feedback" role="status"></p></form></section></main>
+<footer class="site-footer"><div class="footer-main"><a class="brand brand-footer" href="index.html"><span class="brand-mark"><img src="assets/sts-logo.png" alt="STS logo"></span><span class="brand-copy"><strong>STS<span>.</span></strong><small>SMART TECHNICAL SERVICES</small></span></a><p>Fire, security, AV and smart-building solutions—coordinated for the places that matter.</p><a class="footer-top" href="index.html">Back to top ↑</a></div><div class="footer-bottom"><span>© 2026 Smart Technical Services LLC</span><span>Muscat, Sultanate of Oman</span><div><a href="contact.html">Contact</a><a href="solutions.html">Solutions</a><a href="careers.html">Careers</a></div></div></footer>
+<script src="app.js?v=admin-publishing-v2"></script>
+
+<script>
+(() => {
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+  const draft = params.get('draft');
+  const form = document.getElementById('enquiry-form');
+  if (!form || (!service && !draft)) return;
+  const serviceField = form.elements.service;
+  const messageField = form.elements.message;
+  const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  if (serviceField && service) {
+    const aliases = {
+      'security access control': ['security access control', 'security systems'],
+      'audio visual systems': ['audio visual systems', 'audio visual'],
+      'specialized solutions': ['specialized solutions', 'specialist solutions']
+    };
+    const target = normalize(service);
+    const option = [...serviceField.options].find(item => {
+      const label = normalize(item.value || item.textContent);
+      return label === target || (aliases[target] || []).includes(label);
+    });
+    if (option) serviceField.value = option.value;
+  }
+  if (messageField && draft) messageField.value = draft;
+  const firstName = form.elements.name;
+  if (firstName) firstName.focus({preventScroll:true});
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.site-header .main-nav a').forEach(function (link) {
+    const target = (link.getAttribute('href') || '').split('/').pop().toLowerCase();
+    if (target === currentPage) {
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+});
+</script>
+
+</body></html>

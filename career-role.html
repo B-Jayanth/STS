@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Role details and application form for Smart Technical Services."><title>Role Details & Apply | Smart Technical Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=graphic-transition-v1"></head>
+<body class="page-enter palette-red-editorial"><div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+<div class="announcement"><span class="status-dot"></span> Integrated ELV solutions across Oman <span class="announcement-divider">/</span> <a href="admin-login.html">Admin <span aria-hidden="true">↗</span></a></div>
+<header class="site-header" id="top"><a aria-label="Smart Technical Services home" class="brand" href="index.html"><span class="brand-mark"><img src="assets/sts-logo.png" alt="STS logo"></span><span class="brand-copy"><strong>STS<span>.</span></strong><small>SMART TECHNICAL SERVICES</small></span></a><button aria-expanded="false" aria-label="Open navigation" class="menu-toggle"><span></span><span></span></button><nav aria-label="Main navigation" class="main-nav"><a href="index.html">Home</a><a href="solutions.html">Solutions</a><a href="about.html">About STS</a><a href="projects.html">Projects</a><a href="approach.html">Our approach</a><a href="careers.html">Careers</a><a class="nav-contact" href="contact.html">Contact Us <span>↗</span></a></nav><div class="header-account-actions"><a class="account-login account-login-icon-only" href="auth.html" aria-label="Log in" title="Log in"><img src="assets/customer-login-icon.png" alt="" aria-hidden="true"></a><button class="site-search-toggle" type="button" aria-label="Open site search" aria-expanded="false" title="Search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.6"></circle><path d="m16 16 4.2 4.2"></path></svg></button></div></header>
+<main id="career-role-detail"><section class="section"><p>Loading role details…</p></section></main>
+<footer class="site-footer"><div class="footer-main"><a class="brand brand-footer" href="index.html"><span class="brand-mark"><img src="assets/sts-logo.png" alt="STS logo"></span><span class="brand-copy"><strong>STS<span>.</span></strong><small>SMART TECHNICAL SERVICES</small></span></a><p>Fire, security, AV and smart-building solutions—coordinated for the places that matter.</p><a class="footer-top" href="#top">Back to top ↑</a></div><div class="footer-bottom"><span>© 2026 Smart Technical Services LLC</span><span>Muscat, Sultanate of Oman</span><div><a href="contact.html">Contact</a><a href="solutions.html">Solutions</a><a href="careers.html">Careers</a></div></div></footer><script src="app.js?v=graphic-transition-v1"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  document.querySelectorAll('.site-header .main-nav a').forEach(function (link) {
+    const target = (link.getAttribute('href') || '').split('/').pop().toLowerCase();
+    if (target === currentPage) {
+      link.classList.add('is-current');
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+});
+</script>
+
+</body></html>

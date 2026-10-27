@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#023246" />
+  <title>Smart Technical Services | Admin Console</title>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Smart Technical Services dashboard">
+        <span class="brand-mark"><img src="assets/sts-logo.png" alt="STS logo"></span>
+        <span><strong>SMART TECHNICAL</strong><small>SERVICES · ADMIN</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-link active" data-view="overview"><i data-lucide="layout-dashboard" aria-hidden="true"></i> Overview</button>
+        <button class="nav-link" data-view="enquiries"><i data-lucide="message-square" aria-hidden="true"></i> Enquiries <b class="nav-count" id="navEnquiryCount">4</b></button>
+        <button class="nav-link" data-view="projects"><i data-lucide="folder-kanban" aria-hidden="true"></i> Projects</button>
+        <button class="nav-link" data-view="services"><i data-lucide="briefcase-business" aria-hidden="true"></i> Services</button>
+        <button class="nav-link" data-view="customers"><i data-lucide="users-round" aria-hidden="true"></i> Customers</button>
+        <button class="nav-link" data-view="employees"><i data-lucide="contact-round" aria-hidden="true"></i> Employees</button>
+        <button class="nav-link" data-view="team"><i data-lucide="shield-check" aria-hidden="true"></i> Teams &amp; Access</button>
+        <button class="nav-link" data-view="careers"><i data-lucide="user-round-plus" aria-hidden="true"></i> Careers</button>
+        <button class="nav-link" data-view="applications"><i data-lucide="file-check-2" aria-hidden="true"></i> Applications <b class="nav-count" id="navApplicationCount">0</b></button>
+        <button class="nav-link" data-view="content"><i data-lucide="panels-top-left" aria-hidden="true"></i> Website Content</button>
+        <button class="nav-link" data-view="reports"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i> Reports</button>
+        <button class="nav-link" data-view="settings"><i data-lucide="settings" aria-hidden="true"></i> Admin Settings</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="support-card">
+          <span class="support-icon">?</span>
+          <strong>Need assistance?</strong>
+          <p>Review enquiry workflows and system settings.</p>
+          <button class="text-button" data-action="help">Open help centre ↗</button>
+        </div>
+        <div class="profile-mini">
+          <div class="avatar">SA</div>
+          <div class="profile-text"><strong>Site Administrator</strong><small>Administrator</small></div>
+          <button class="icon-button" id="profileMenu" aria-label="Profile options">⋯</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumbs"><span>Smart Technical Services</span><span class="crumb-sep">/</span><strong id="crumbCurrent">Overview</strong></div>
+        <div class="top-actions">
+          <a class="btn btn-secondary back-site-btn" href="index.html"><span aria-hidden="true">←</span> Back to site</a>
+          <button class="btn btn-secondary" id="stsAdminLogout" type="button" aria-label="Sign out of admin dashboard">Sign out</button>
+          <span class="system-status"><i></i> All systems operational</span>
+          <button class="icon-button notification-button" id="notificationBtn" aria-label="Notifications">♧<em id="notificationDot"></em></button>
+          <div class="top-avatar">SA</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="page-view active" id="view-overview">
+          <div class="page-heading">
+            <div><p class="eyebrow" id="todayLabel">ADMINISTRATION</p><h1>Overview</h1><p class="muted">Here’s what’s happening across your service operations.</p></div>
+            <div class="heading-actions"><button class="btn btn-secondary" id="exportOverview">↓ Export report</button><button class="btn btn-primary" data-action="new-enquiry">＋ New enquiry</button></div>
+          </div>
+          <div class="welcome-banner">
+            <div><span class="banner-kicker">SMART TECHNICAL SERVICES · MUSCAT, OMAN</span><h2>Good work starts with a clear view.</h2><p>Manage customer requests, service offerings, projects, and follow-ups in one place.</p><button class="banner-link" data-view-link="enquiries">Review enquiries <span>→</span></button></div>
+            <div class="banner-art" aria-hidden="true"><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><div class="art-building">▥</div><span class="art-chip chip-one">ELV</span><span class="art-chip chip-two">BMS</span><span class="art-chip chip-three">24/7</span></div>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Total enquiries</span><span class="stat-icon blue">✉</span></div><strong id="statEnquiries">24</strong><div class="stat-foot"><span class="trend positive">↑ 12.5%</span><span>vs. previous period</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Awaiting response</span><span class="stat-icon amber">◷</span></div><strong id="statPending">4</strong><div class="stat-foot"><span class="trend warning">Needs attention</span><span>open enquiries</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Active services</span><span class="stat-icon violet">◇</span></div><strong id="statServices">12</strong><div class="stat-foot"><span class="trend neutral">Published</span><span>across 5 categories</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Projects</span><span class="stat-icon green">▤</span></div><strong id="statProjects">8</strong><div class="stat-foot"><span class="trend positive">3 in progress</span><span>current portfolio</span></div></article>
+          </div>
+          <div class="content-grid">
+            <article class="panel activity-panel">
+              <div class="panel-heading"><div><h3>Enquiry activity</h3><p class="muted">Incoming requests over the last 7 days</p></div><select id="activityRange" aria-label="Activity range"><option value="7">Last 7 days</option><option value="30">Last 30 days</option></select></div>
+              <div class="chart-legend"><span><i class="legend-blue"></i> Enquiries</span><span><i class="legend-light"></i> Replied</span></div>
+              <div class="bar-chart" id="activityChart" aria-label="Enquiry activity chart"></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><h3>Enquiries by service</h3><p class="muted">Current enquiry distribution</p></div><button class="more-button" data-view-link="reports">View report ↗</button></div>
+              <div class="service-breakdown" id="serviceBreakdown"></div>
+            </article>
+          </div>
+          <div class="content-grid lower-grid">
+            <article class="panel">
+              <div class="panel-heading"><div><h3>Recent enquiries</h3><p class="muted">Latest customer requests</p></div><button class="more-button" data-view-link="enquiries">View all →</button></div>
+              <div class="table-wrap"><table><thead><tr><th>Customer</th><th>Service</th><th>Received</th><th>Status</th><th></th></tr></thead><tbody id="recentEnquiries"></tbody></table></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><h3>Quick actions</h3><p class="muted">Common administration tasks</p></div></div>
+              <div class="quick-actions">
+                <button data-action="new-enquiry"><span class="quick-icon q-blue">＋</span><span><strong>Create enquiry</strong><small>Record a customer request</small></span><b>→</b></button>
+                <button data-action="new-service"><span class="quick-icon q-purple">◇</span><span><strong>Add service</strong><small>Publish a service offering</small></span><b>→</b></button>
+                <button data-action="new-project"><span class="quick-icon q-green">▤</span><span><strong>Add project</strong><small>Update your portfolio</small></span><b>→</b></button>
+                <button data-view-link="reports"><span class="quick-icon q-orange">▥</span><span><strong>View reports</strong><small>Review operational metrics</small></span><b>→</b></button>
+              </div>
+            </article>
+          </div>
+          <p class="data-note">This workspace stores changes in this browser for this installation. Connect a secure backend before using it for real customer records or email delivery.</p>
+        </section>
+
+        <section class="page-view" id="view-enquiries">
+          <div class="page-heading"><div><p class="eyebrow">CUSTOMER RELATIONSHIPS</p><h1>Enquiries</h1><p class="muted">Track customer questions, service requests, and email replies.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="exportEnquiries">↓ Export CSV</button><button class="btn btn-primary" data-action="new-enquiry">＋ Add enquiry</button></div></div>
+          <div class="stats-grid compact-stats"><article class="stat-card"><span class="muted">All enquiries</span><strong id="enquiryTotal">24</strong></article><article class="stat-card"><span class="muted">New</span><strong id="enquiryNew">2</strong></article><article class="stat-card"><span class="muted">In progress</span><strong id="enquiryProgress">8</strong></article><article class="stat-card"><span class="muted">Resolved</span><strong id="enquiryResolved">14</strong></article></div>
+          <article class="panel">
+            <div class="toolbar"><div class="search-box"><span>⌕</span><input id="enquirySearch" type="search" placeholder="Search name, email, service, or ID..." /></div><select id="statusFilter"><option value="all">All statuses</option><option>New</option><option>In Progress</option><option>Awaiting Customer</option><option>Resolved</option></select><select id="serviceFilter"><option value="all">All services</option></select><button class="btn btn-secondary" id="clearEnquiryFilters">Clear filters</button></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Enquiry</th><th>Service</th><th>Received</th><th>Priority</th><th>Status</th><th>Assigned to</th><th>Actions</th></tr></thead><tbody id="enquiriesTable"></tbody></table></div>
+            <div class="table-footer"><span id="enquiryTableCount">Showing enquiries</span><span>Click an enquiry to view details and reply.</span></div>
+          </article>
+        </section>
+
+        <section class="page-view" id="view-services">
+          <div class="page-heading"><div><p class="eyebrow">SERVICE CATALOGUE</p><h1>Services</h1><p class="muted">Manage the technical solutions displayed on the public website.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="exportServices">↓ Export CSV</button><button class="btn btn-primary" data-action="new-service">＋ Add service</button></div></div>
+          <div class="toolbar"><div class="search-box"><span>⌕</span><input id="serviceSearch" type="search" placeholder="Search services..." /></div><select id="categoryFilter"><option value="all">All categories</option></select><select id="serviceStatusFilter"><option value="all">All statuses</option><option>Published</option><option>On Hold</option><option>Draft</option></select></div>
+          <div class="service-cards" id="serviceCards"></div>
+        </section>
+
+        <section class="page-view" id="view-projects">
+          <div class="page-heading"><div><p class="eyebrow">PORTFOLIO MANAGEMENT</p><h1>Projects</h1><p class="muted">Manage project records. Completed and in-progress projects are published to the public Projects page in this browser.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="exportProjects">↓ Export CSV</button><button class="btn btn-primary" data-action="new-project">＋ Add project</button></div></div>
+          <div class="toolbar"><div class="search-box"><span>⌕</span><input id="projectSearch" type="search" placeholder="Search project or client..." /></div><select id="projectStatusFilter"><option value="all">All project statuses</option><option>Planning</option><option>In Progress</option><option>Completed</option></select></div>
+          <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <section class="page-view" id="view-careers">
+          <div class="page-heading">
+            <div><p class="eyebrow">RECRUITMENT MANAGEMENT</p><h1>Careers</h1><p class="muted">Manage the six current vacancies shown on the Smart Technical Services careers page.</p></div>
+            <div class="heading-actions"><button class="btn btn-secondary" id="exportCareers">↓ Export CSV</button><button class="btn btn-primary" data-action="new-career">＋ Add career</button></div>
+          </div>
+          <div class="stats-grid compact-stats">
+            <article class="stat-card"><span class="muted">All positions</span><strong id="careerTotal">6</strong></article>
+            <article class="stat-card"><span class="muted">Published</span><strong id="careerPublished">6</strong></article>
+            <article class="stat-card"><span class="muted">On hold</span><strong id="careerOnHold">0</strong></article><article class="stat-card"><span class="muted">Drafts</span><strong id="careerDrafts">0</strong></article>
+            <article class="stat-card"><span class="muted">Full-time roles</span><strong id="careerFullTime">6</strong></article>
+          </div>
+          <div class="toolbar">
+            <div class="search-box"><span>⌕</span><input id="careerSearch" type="search" placeholder="Search job title, role, or description..." /></div>
+            <select id="careerStatusFilter"><option value="all">All visibility</option><option>Published</option><option>Draft</option></select>
+          </div>
+          <div class="career-grid" id="careerGrid"></div>
+          <div class="notice-box career-notice"><strong>Publishing note</strong><p>Published career changes appear on the public Careers page in this browser when both pages use the same origin. A backend/CMS is required to publish changes for all visitors.</p></div>
+        </section>
+
+        <section class="page-view" id="view-applications">
+          <div class="page-heading"><div><p class="eyebrow">RECRUITMENT INBOX</p><h1>Applications</h1><p class="muted">Review candidate submissions from the public Careers page.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="refreshApplications" type="button">↻ Refresh</button></div></div>
+          <div class="notice-box"><strong>Local prototype notifications</strong><p>Applications are visible here when the public site and admin dashboard run in the same browser and origin. Resume files are not uploaded. A secure backend is required for central notifications and document handling.</p></div>
+          <div class="stats-grid compact-stats"><article class="stat-card"><span class="muted">Total applications</span><strong id="applicationTotal">0</strong></article><article class="stat-card"><span class="muted">New</span><strong id="applicationNew">0</strong></article><article class="stat-card"><span class="muted">Reviewed</span><strong id="applicationReviewed">0</strong></article></div>
+          <article class="panel"><div class="toolbar"><div class="search-box"><span>⌕</span><input id="applicationSearch" type="search" placeholder="Search candidate, role, email..." /></div><select id="applicationStatusFilter"><option value="all">All statuses</option><option>New</option><option>Reviewed</option><option>Shortlisted</option><option>Rejected</option></select></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Candidate</th><th>Role</th><th>Contact</th><th>Experience</th><th>Submitted</th><th>Status</th><th>Action</th></tr></thead><tbody id="applicationsTable"></tbody></table></div></article>
+        </section>
+
+        <section class="page-view" id="view-career-editor">
+          <div class="page-heading">
+            <div><p class="eyebrow">RECRUITMENT MANAGEMENT</p><h1 id="careerEditorHeading">Edit career</h1><p class="muted">Update the vacancy details, image, and publication status.</p></div>
+            <div class="heading-actions"><button class="btn btn-secondary" id="cancelCareerEdit">← Back to careers</button></div>
+          </div>
+          <div class="panel career-editor-panel">
+            <form id="careerEditorForm" class="career-editor-form">
+              <input type="hidden" name="id" />
+              <div class="career-editor-section-title">Position details</div>
+              <div class="career-editor-fields">
+                <label class="form-field"><span>Career card label</span><input name="role" required maxlength="100" placeholder="Security Engineer" /></label>
+                <label class="form-field"><span>Job title</span><input name="title" required maxlength="160" placeholder="Senior ELV / Security Systems Engineer" /></label>
+                <label class="form-field career-editor-wide"><span>Job description</span><textarea name="description" required maxlength="1500" rows="4" placeholder="Describe the role and responsibilities"></textarea></label>
+                <label class="form-field"><span>Location</span><input name="location" required maxlength="120" placeholder="Muscat, Oman" /></label>
+                <label class="form-field"><span>Employment type</span><select name="employmentType"><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Temporary</option><option>Internship</option></select></label>
+                <label class="form-field"><span>Experience required</span><input name="experience" required maxlength="80" placeholder="5+ years" /></label>
+              </div>
+              <div class="career-editor-section-title">Career image</div>
+              <div class="career-image-editor">
+                <div class="career-image-preview-box"><img id="careerImagePreview" alt="Career image preview" /><div id="careerImageEmpty" class="career-image-preview-empty">Image preview</div></div>
+                <div class="career-image-controls">
+                  <label class="form-field"><span>Upload an image</span><input type="file" id="careerImageUpload" accept="image/*" /></label>
+                  <label class="form-field"><span>Or enter an image URL</span><input name="image" id="careerImageUrl" type="url" placeholder="https://example.com/career-image.webp" /></label>
+                  <p class="form-help">Uploaded images are saved in this browser's local storage. Use a compressed image to avoid browser storage limits. An image URL can be used instead.</p>
+                  <button type="button" class="btn btn-secondary btn-small" id="removeCareerImage">Remove image</button>
+                </div>
+              </div>
+              <div class="career-editor-section-title">Publication settings</div>
+              <div class="career-editor-fields">
+                <label class="form-field"><span>Hiring status</span><select name="status"><option value="Published">Published</option><option value="On Hold">On Hold</option><option value="Draft">Draft</option></select><small>Use On Hold to pause recruitment without deleting the vacancy.</small></label>
+                <label class="form-field"><span>View Details URL (optional)</span><input name="detailsUrl" type="url" placeholder="https://..." /></label>
+                <label class="form-field"><span>Apply Now URL (optional)</span><input name="applyUrl" type="url" placeholder="https://..." /></label>
+              </div>
+              <div class="career-editor-footer"><button type="button" class="btn btn-secondary" id="cancelCareerEditBottom">Cancel</button><button type="submit" class="btn btn-primary">Save career details</button></div>
+            </form>
+          </div>
+        </section>
+
+        <section class="page-view" id="view-customers">
+          <div class="page-heading"><div><p class="eyebrow">CUSTOMER DIRECTORY</p><h1>Customers</h1><p class="muted">View customer contact information and enquiry history.</p></div><button class="btn btn-secondary" id="exportCustomers">↓ Export CSV</button></div>
+          <div class="toolbar"><div class="search-box"><span>⌕</span><input id="customerSearch" type="search" placeholder="Search customers..." /></div></div>
+          
+          <div class="page-heading" style="margin-top:28px"><div><p class="eyebrow">WEBSITE ACCOUNTS</p><h2>Customer signups</h2><p class="muted">People who created an account on the public website.</p></div><button class="btn btn-secondary" id="exportCustomerSignups">↓ Export signups CSV</button></div><article class="panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Company</th><th>Registered</th><th>Enquiries</th><th>Action</th></tr></thead><tbody id="registeredCustomersTable"></tbody></table></div></article><p class="data-note">Prototype note: signups are saved in this browser using localStorage. Use a secure server and database for real accounts; do not store real passwords in browser storage.</p>
+        </section>
+
+        <section class="page-view" id="view-employees">
+          <div class="page-heading"><div><p class="eyebrow">EMPLOYEE DIRECTORY</p><h1>Employees</h1><p class="muted">Maintain employee contact, employment, emergency-contact, and background-check document records.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="exportEmployees">↓ Export CSV</button><button class="btn btn-primary" data-action="new-employee">＋ Add employee</button></div></div>
+          <div class="notice-box"><strong>Confidential employee records</strong><p>This demo stores employee records and uploaded documents in this browser only. For real background-check (BGC) documents, use a secure backend with encryption, restricted access, audit logs, retention rules, and employee consent. Do not upload sensitive documents to a shared or public computer.</p></div>
+          <div class="toolbar"><div class="search-box"><span>⌕</span><input id="employeeSearch" type="search" placeholder="Search by employee, ID, phone, department..." /></div><select id="employeeStatusFilter" aria-label="Filter employee status"><option value="all">All statuses</option><option>Active</option><option>On Leave</option><option>Inactive</option></select></div>
+          <article class="panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>Employee</th><th>Employee ID</th><th>Phone</th><th>Department / role</th><th>Status</th><th>BGC documents</th><th>Actions</th></tr></thead><tbody id="employeesTable"></tbody></table></div></article>
+        </section>
+
+        <section class="page-view" id="view-team">
+          <div class="page-heading"><div><p class="eyebrow">ACCESS MANAGEMENT</p><h1>Teams & Access</h1><p class="muted">Manage workspace team entries and role assignments.</p></div><button class="btn btn-primary" data-action="new-team">＋ Add team member</button></div>
+          <div class="notice-box"><strong>Security note</strong><p>This front-end workspace does not enforce real authentication or server-side permissions. Configure identity management and role checks on your backend before using this section for live access control.</p></div>
+          <article class="panel"><div class="table-wrap"><table class="data-table"><thead><tr><th>Team member</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead><tbody id="teamTable"></tbody></table></div></article>
+        </section>
+
+        <section class="page-view" id="view-content">
+          <div class="page-heading"><div><p class="eyebrow">PUBLIC WEBSITE</p><h1>Website Content</h1><p class="muted">Update key text displayed on the website.</p></div><button class="btn btn-primary" id="saveContent">Save content</button></div>
+          <div class="content-grid">
+            <article class="panel form-panel"><h3>Homepage content</h3><p class="muted">Edit the headline and contact details shown in this workspace.</p><form id="contentForm" class="form-grid"><label class="full">Homepage headline<input name="headline" id="contentHeadline" maxlength="120" required value="Integrated Technical Solutions for Modern Buildings" /></label><label class="full">Short description<textarea name="description" id="contentDescription" rows="4" maxlength="500">Fire, security, audio-visual, and smart-building systems delivered with care and precision.</textarea></label><label>Contact email<input name="email" id="contentEmail" type="email" required value="info@smarttechnicalservices.com" /></label><label>Contact phone<input name="phone" id="contentPhone" value="+968 0000 0000" /></label><label>Office location<input name="location" id="contentLocation" value="Ghala, Muscat, Oman" /></label><label>Primary CTA<input name="cta" id="contentCta" value="Request a site survey" /></label></form></article>
+            <article class="panel"><h3>Content checklist</h3><p class="muted">Review before publishing website changes.</p><div class="checklist"><label><input type="checkbox" checked /> Confirm all service descriptions</label><label><input type="checkbox" /> Replace placeholder contact details</label><label><input type="checkbox" /> Verify certifications and claims</label><label><input type="checkbox" /> Check Arabic translations</label><label><input type="checkbox" /> Review mobile layout</label></div><div class="preview-card"><span class="eyebrow">HOMEPAGE PREVIEW</span><h3 id="previewHeadline">Integrated Technical Solutions for Modern Buildings</h3><p id="previewDescription">Fire, security, audio-visual, and smart-building systems delivered with care and precision.</p><span id="previewCta" class="preview-cta">Request a site survey →</span></div></article>
+          </div>
+        </section>
+
+        <section class="page-view" id="view-reports">
+          <div class="page-heading"><div><p class="eyebrow">BUSINESS INTELLIGENCE</p><h1>Reports</h1><p class="muted">Review enquiry volume, service demand, and resolution performance.</p></div><button class="btn btn-primary" id="exportFullReport">↓ Download report CSV</button></div>
+          <div class="stats-grid"><article class="stat-card"><span class="muted">Resolution rate</span><strong id="reportResolution">58%</strong><div class="stat-foot">Resolved enquiries</div></article><article class="stat-card"><span class="muted">Average first reply</span><strong>4.2h</strong><div class="stat-foot">Illustrative operational metric</div></article><article class="stat-card"><span class="muted">Top service</span><strong id="reportTopService">Security</strong><div class="stat-foot">By enquiry count</div></article><article class="stat-card"><span class="muted">Customer records</span><strong id="reportCustomers">0</strong><div class="stat-foot">Unique contacts</div></article></div>
+          <div class="content-grid"><article class="panel"><div class="panel-heading"><div><h3>Enquiry status</h3><p class="muted">Current distribution</p></div></div><div id="statusReport" class="report-bars"></div></article><article class="panel"><div class="panel-heading"><div><h3>Service demand</h3><p class="muted">Enquiries grouped by service</p></div></div><div id="serviceReport" class="report-bars"></div></article></div>
+        </section>
+
+        <section class="page-view" id="view-settings">
+          <div class="page-heading"><div><p class="eyebrow">ADMINISTRATION</p><h1>Admin Settings</h1><p class="muted">Manage administrator profile, notification preferences, and workspace data.</p></div><button class="btn btn-primary" id="saveSettings">Save settings</button></div>
+          <div class="content-grid">
+            <article class="panel form-panel"><h3>Administrator profile</h3><p class="muted">Update the display name and work email shown in this browser.</p><form id="adminProfileForm" class="form-grid"><label class="full">Display name<input id="adminDisplayName" name="displayName" maxlength="80" value="Site Administrator" required /></label><label class="full">Work email<input id="adminWorkEmail" name="workEmail" type="email" maxlength="160" value="admin@stselv.com" required /></label><div class="full"><button class="btn btn-primary" type="submit">Save admin profile</button></div></form><p class="data-note">Profile details are saved locally in this browser. This does not change server-side login credentials.</p></article>
+            <article class="panel form-panel"><h3>Notifications</h3><p class="muted">Choose which in-app events should be highlighted.</p><div class="setting-row"><div><strong>New enquiry alerts</strong><p>Show a notification when an enquiry is created.</p></div><label class="switch"><input type="checkbox" id="settingNew" checked/><span></span></label></div><div class="setting-row"><div><strong>Reply reminders</strong><p>Highlight enquiries awaiting a response.</p></div><label class="switch"><input type="checkbox" id="settingReminder" checked/><span></span></label></div><div class="setting-row"><div><strong>Project updates</strong><p>Show project status changes.</p></div><label class="switch"><input type="checkbox" id="settingProject" checked/><span></span></label></div></article>
+            <article class="panel form-panel"><h3>Workspace data</h3><p class="muted">Export your current browser data or restore the initial sample records.</p><div class="settings-action"><div><strong>Export workspace backup</strong><p>Download enquiries, services, projects, customers, and settings.</p></div><button class="btn btn-secondary" id="backupData">Export backup</button></div><div class="settings-action"><div><strong>Restore initial records</strong><p>Replace local changes with the original example dataset.</p></div><button class="btn btn-danger-outline" id="resetData">Restore data</button></div><div class="settings-action"><div><strong>Clear local data</strong><p>Remove saved changes from this browser.</p></div><button class="btn btn-danger-outline" id="clearData">Clear data</button></div></article>
+          </div>
+          <div class="notice-box"><strong>Production integration required</strong><p>Local browser storage is not a shared database. For live operation, connect a backend, admin authentication, server-side validation, audit logging, and an email provider such as a transactional SMTP/API service.</p></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><p class="eyebrow">SMART TECHNICAL SERVICES</p><h2 id="modalTitle">Create record</h2></div><button class="icon-button" id="closeModal" aria-label="Close">✕</button></div>
+      <div class="modal-body" id="modalBody"></div>
+    </section>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script>
+    if (sessionStorage.getItem('stsAdminAuthenticated') !== 'true') {
+      window.location.replace('admin-login.html');
+    }
+    document.getElementById('stsAdminLogout')?.addEventListener('click', function () {
+      sessionStorage.removeItem('stsAdminAuthenticated');
+      window.location.replace('admin-login.html');
+    });
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

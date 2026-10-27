@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin Login | Smart Technical Services</title><link rel="stylesheet" href="styles.css?v=admin-layout-final-v2"><style>
+.admin-auth-page{min-height:100vh;background:#f5f7fa;color:#17212b;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);font-family:Arial,sans-serif}.auth-brand{background:#071c2b;color:#fff;padding:clamp(28px,5vw,76px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.auth-brand:after{content:"";position:absolute;width:560px;height:560px;border:1px solid #ffffff18;border-radius:50%;right:-180px;bottom:-220px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff05}.auth-logo{width:clamp(230px,24vw,330px);max-width:92%;height:auto;min-height:180px;object-fit:contain;object-position:left;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.12))}.auth-brand-copy{position:relative;z-index:1;max-width:570px}.auth-kicker{font:700 11px/1.4 monospace;letter-spacing:.18em;color:#ef5366;text-transform:uppercase}.auth-brand h1{font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-.05em;margin:20px 0}.auth-brand p{color:#c3ced7;line-height:1.8;max-width:440px}.auth-foot{font-size:12px;color:#a8b7c4;position:relative;z-index:1}.auth-form-side{display:grid;place-items:center;padding:28px}.auth-card{width:min(100%,420px);background:#fff;border:1px solid #e5e9ee;border-radius:18px;padding:clamp(26px,4vw,42px);box-shadow:0 18px 60px #15283b0c}.auth-icon{height:48px;width:48px;border-radius:14px;background:#D4D4CE;color:#287094;display:grid;place-items:center;font-size:22px}.auth-card h2{font-size:28px;letter-spacing:-.04em;margin:22px 0 8px}.auth-sub{color:#697887;font-size:14px;line-height:1.6;margin:0 0 26px}.auth-field{display:block;font-size:12px;font-weight:700;color:#354454;margin:17px 0 8px}.auth-input{width:100%;height:48px;border:1px solid #d9e0e7;border-radius:9px;padding:0 13px;font:inherit;outline:none;box-sizing:border-box;background:#fff}.password-wrap{position:relative}.password-wrap .auth-input{padding-right:52px}.password-toggle{position:absolute;right:6px;top:6px;width:36px;height:36px;display:grid;place-items:center;border:0;border-radius:7px;background:transparent;color:#647382;cursor:pointer}.password-toggle:hover{background:#f4f6f8;color:#287094}.password-toggle:focus-visible{outline:2px solid #287094;outline-offset:1px}.password-toggle svg{width:19px;height:19px;display:block}.auth-input:focus{border-color:#287094;box-shadow:0 0 0 3px #28709415}.auth-submit{width:100%;height:49px;border:0;border-radius:9px;background:#287094;color:white;font-weight:700;margin-top:23px;cursor:pointer}.auth-submit:hover{background:#023246}.auth-error{color:#023246;background:#D4D4CE;border-radius:8px;padding:10px 12px;font-size:13px;margin-top:14px;display:none}.auth-back{display:inline-block;color:#536474;text-decoration:none;font-size:13px;margin-top:22px}.auth-back:hover{color:#287094}.auth-note{margin-top:20px;border-top:1px solid #edf0f3;padding-top:15px;font-size:11px;line-height:1.6;color:#8793a0}.auth-note strong{color:#5d6c7b}@media(max-width:760px){.admin-auth-page{grid-template-columns:1fr}.auth-brand{min-height:230px;padding:28px}.auth-brand h1{font-size:40px;margin:13px 0}.auth-brand p{font-size:13px;margin-bottom:0}.auth-foot{margin-top:30px}.auth-form-side{padding:22px 16px 35px}.auth-card{box-shadow:none}}
+
+/* Consistent STS admin palette: white 60%, black 30%, Signal Red 10% */
+.admin-auth-page{background:#fff;color:#023246;font-family:'DM Sans',Arial,sans-serif}
+.auth-brand{background:#00384a;color:#fff}
+.auth-brand:after{border-color:#ffffff14;box-shadow:0 0 0 55px #ffffff06,0 0 0 110px #ffffff04}
+.auth-kicker{color:#D4D4CE}
+.auth-brand h1{color:#fff}
+.auth-brand p{color:#D4D4CE}
+.auth-foot{color:#bdbdbd}
+.auth-card{width:min(100%,488px);border-color:#D4D4CE;box-shadow:0 16px 48px rgba(0,0,0,.055);border-radius:12px;padding:clamp(30px,4vw,48px)}
+.auth-icon{background:#D4D4CE;color:#287094;border-radius:10px}
+.auth-card h2{color:#023246}
+.auth-sub{color:#666}
+.auth-field{color:#023246}
+.auth-input{border-color:#D4D4CE;color:#023246;border-radius:8px}
+.auth-input:focus{border-color:#287094;box-shadow:0 0 0 3px #28709415}
+.password-toggle:hover{background:#D4D4CE;color:#287094}
+.password-toggle:focus-visible{outline:2px solid #287094}
+.auth-submit{background:#287094;border-radius:8px}
+.auth-submit:hover{background:#023246}
+.auth-error{color:#023246;background:#D4D4CE}
+.auth-back:hover{color:#287094}
+.auth-note{border-color:#D4D4CE;color:#023246}
+.auth-note strong{color:#023246}
+@media(max-width:760px){.auth-logo{width:190px;min-height:120px}.admin-auth-page{grid-template-columns:minmax(0,1fr)}.auth-brand{min-height:220px}.auth-form-side{padding:22px 16px 34px}.auth-card{box-shadow:0 8px 30px rgba(0,0,0,.04)}}
+
+/* Reference screenshot proportions and logo visibility; overrides all legacy auth rules. */
+.admin-auth-page{grid-template-columns:52.7% 47.3%;min-height:100vh}
+.admin-auth-page .auth-brand{padding:clamp(36px,4.5vw,84px);justify-content:space-between;gap:24px}
+.admin-auth-page .auth-brand>a{display:block;width:190px;height:180px;flex:0 0 auto;position:relative;z-index:2}
+.admin-auth-page .auth-brand a .auth-logo{width:190px!important;height:180px!important;min-height:0!important;max-width:none!important;object-fit:contain!important;object-position:left top!important;display:block!important}
+.admin-auth-page .auth-brand-copy{max-width:590px;margin-top:auto;margin-bottom:auto}
+.admin-auth-page .auth-brand h1{font-size:clamp(48px,4.25vw,76px);line-height:1.02;margin:26px 0}
+.admin-auth-page .auth-brand p{font-size:16px;line-height:2;max-width:500px}
+.admin-auth-page .auth-form-side{padding:32px}
+@media(max-width:760px){.admin-auth-page{grid-template-columns:1fr}.admin-auth-page .auth-brand{padding:28px;gap:22px}.admin-auth-page .auth-brand>a{width:145px;height:130px}.admin-auth-page .auth-brand a .auth-logo{width:145px!important;height:130px!important}.admin-auth-page .auth-brand-copy{margin:0}.admin-auth-page .auth-brand h1{font-size:40px;margin:13px 0}.admin-auth-page .auth-brand p{font-size:13px;line-height:1.8}.admin-auth-page .auth-foot{margin-top:18px}.admin-auth-page .auth-form-side{padding:22px 16px 35px}}
+</style></head><body><main class="admin-auth-page"><section class="auth-brand"><a href="index.html" aria-label="STS home"><img class="auth-logo" src="assets/sts-logo.png" alt="Smart Technical Services"></a><div class="auth-brand-copy"><div class="auth-kicker">Smart Technical Services / Secure access</div><h1>Operations,<br>in good hands.</h1><p>Welcome to the STS administration workspace. Sign in to view the dashboard and manage your team’s operational overview.</p></div><div class="auth-foot">© 2026 Smart Technical Services · Oman</div></section><section class="auth-form-side"><form class="auth-card" id="admin-login-form"><div class="auth-icon" aria-hidden="true">↗</div><h2>Admin sign in</h2><p class="auth-sub">Enter your administrator credentials to continue.</p><label class="auth-field" for="admin-email">Work email</label><input class="auth-input" id="admin-email" type="email" autocomplete="username" placeholder="admin@stselv.com" required><label class="auth-field" for="admin-password">Password</label><div class="password-wrap"><input class="auth-input" id="admin-password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="password-toggle" id="toggle-password" type="button" aria-label="Show password" aria-pressed="false" title="Show password"><svg id="password-eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div><button class="auth-submit" type="submit">Sign in to dashboard <span aria-hidden="true">→</span></button><div class="auth-error" id="auth-error" role="alert">The email or password is incorrect. Please try again.</div><a class="auth-back" href="index.html">← Back to STS website</a><div class="auth-note"><strong>Prototype sign-in:</strong> This static website uses a demo login for UI testing. Connect a secure backend before using real company or customer data.</div></form></section></main><script>
+const passwordField=document.getElementById('admin-password');
+const togglePassword=document.getElementById('toggle-password');
+const eyeIcon=document.getElementById('password-eye-icon');
+togglePassword.addEventListener('click',function(){
+  const reveal=passwordField.type==='password';
+  passwordField.type=reveal?'text':'password';
+  togglePassword.setAttribute('aria-label',reveal?'Hide password':'Show password');
+  togglePassword.setAttribute('title',reveal?'Hide password':'Show password');
+  togglePassword.setAttribute('aria-pressed',String(reveal));
+  eyeIcon.innerHTML=reveal
+    ? '<path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.7 10.7 0 0 1 12 5c6.4 0 10 7 10 7a16.8 16.8 0 0 1-3.2 3.9"/><path d="M6.2 6.2C3.5 8.1 2 12 2 12s3.6 7 10 7c1 0 2-.2 2.8-.5"/>'
+    : '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>';
+});
+ document.getElementById('admin-login-form').addEventListener('submit',function(e){e.preventDefault();const email=document.getElementById('admin-email').value.trim().toLowerCase();const password=document.getElementById('admin-password').value;const err=document.getElementById('auth-error');if(email==='admin@stselv.com'&&password==='STS2026!'){sessionStorage.setItem('stsAdminAuthenticated','true');window.location.href='admin-dashboard.html';}else{err.style.display='block';}});
+</script></body></html>

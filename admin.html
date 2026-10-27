@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>STS Admin | Secure Access</title>
+  <script>
+    // Keep the legacy admin entry URL aligned with the requested sign-in design.
+    // Authenticated administrators continue to the actual dashboard.
+    (function () {
+      var authenticated = false;
+      try { authenticated = sessionStorage.getItem('stsAdminAuthenticated') === 'true'; } catch (e) {}
+      window.location.replace(authenticated ? 'admin-dashboard.html' : 'admin-login.html');
+    }());
+  </script>
+</head>
+<body>
+  <p>Opening the STS administration workspace…</p>
+  <noscript><p>Please enable JavaScript to continue to <a href="admin-login.html">Admin sign in</a>.</p></noscript>
+</body>
+</html>
