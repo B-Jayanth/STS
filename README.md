@@ -37,3 +37,7 @@ The current front-end prototype uses browser storage for certain customer and en
 ## Project Purpose
 
 To provide a professional digital presence for STS while making technical services easier to explore and customer enquiries easier to manage.
+
+For admin page the demo login credentials are :
+Admin ID / Email: admin@stselv.com
+Password: STS2026!
